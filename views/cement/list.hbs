@@ -1,0 +1,25 @@
+<h3><a class="btn btn-secondary" href="/api/cements"><i class="fa fa-plus"></i>  Create New</a>   Cement List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Qty</th>
+            <th>Rate</th>
+            <th>Total Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.date}}</td>
+            <td>{{this.qty}}</td>
+            <td>{{this.rate}}</td>
+            <td>{{this.total}}</td>
+            <td>
+                <a href="/api/cements/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/api/cements/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?')";><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
